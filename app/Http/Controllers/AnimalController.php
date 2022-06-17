@@ -18,9 +18,16 @@ class AnimalController extends Controller
         ]);
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        // $id = Animal::query()
-        //     - get();
+
+        $animal_names = $request->input('search');
+
+        $animal_names = Animal::query()
+            ->where('name', 'LIKE', "%{$animal_names}%")
+            ->get();
+
+
+        return view('animal_names', compact('animal_names'));
     }
 }

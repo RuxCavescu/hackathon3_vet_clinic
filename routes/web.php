@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/animals', ['App\Http\Controllers\AnimalController', 'show']);
 Route::get('animals/{id}/detail', ['App\Http\Controllers\DetailController', 'detail']);
+Route::get('animals/search', ['App\Http\Controllers\AnimalController', 'search']);

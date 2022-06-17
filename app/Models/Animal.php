@@ -8,15 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Animal extends Model
 {
     use HasFactory;
-
-
-    // public function animals()
-    // {
-    //     return $this->hasMany(Animal::class);
-    // }
-
-    // public function owner()
-    // {
-    //     return $this->belongsTo(Owner:class);
-    // }
 }

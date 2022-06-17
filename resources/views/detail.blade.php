@@ -16,14 +16,8 @@
         <li>Weight: {{$animal->weight}}</li>
 
     </ul>
-
-
-
-
-{{-- <h3>{{$animal->name}}</h3> --}}
-
-
-
     
+
+
 </body>
 </html>
