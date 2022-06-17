@@ -59,17 +59,7 @@ class AnimalController extends Controller
       return redirect(route("animals.edit", $animal->id));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        $animals = Animal::query()
-                          ->get();
-    }
+
 
     /**
      * Show the form for editing the specified resource.
