@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Here are a list of previous visits for {{ $pet['name'] }}:</h1>
+    <h3>Total visits to date: {{ count($visits) }} visits.</h3>
 
     @if ($visits)
         <ul>
@@ -38,13 +39,13 @@
     @endif
 
     @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+        <div class="alert alert-danger" style="background-color: red; color: white;">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
     
     @if (Session::has('success_message'))

@@ -29,6 +29,7 @@ class VisitController extends Controller
 
     public function create(Request $request)
     {
+        $this->validateVisit($request);
 
         $pet = Animal::query()
             ->where('id', $request->id)
@@ -49,10 +50,9 @@ class VisitController extends Controller
         return view('view-visits', compact('visit', 'pet', 'visits'));
     }
 
-    public function edit($pet_id, $visit_id)
+    public function edit(Request $request, $pet_id, $visit_id)
     {
-
-        // dd($visit_id);
+        $this->validateVisit($request);
 
         $visit = Visit::query()
             ->where('id', $visit_id)
@@ -90,21 +90,6 @@ class VisitController extends Controller
         return redirect( url('/animals/'.$pet_id.'/detail/view-visits') );
     }
 
-    public function rules() // function used to define validation rules
-    {
-        return [
-            'date' => 'required',
-            'date' => '\(?(\d{2})\)?[.]?(\d{2})[.]?(\d{4})',
-        ];
-    }
-
-    public function messages() // function to flash the errors
-    {
-        return [
-            'name.required' => 'The date is required!',
-        ];
-    }
-
     public function destroy(Request $request, $pet_id, $visit_id)
     {
 
@@ -116,4 +101,16 @@ class VisitController extends Controller
 
         return redirect( url('/animals/'.$pet_id.'/detail/view-visits') );
     }
+
+    private function validateVisit(Request $request)
+        {
+            $this->validate($request, [
+                'date' => 'required|regex:/^\d{1,2}[.]\d{1,2}[.]\d{4}$/i',
+                'visit_detail' => 'required',
+            ], [
+                'date.required' => 'The date is required!',
+                'visit_detail.required' => 'Please fill in some details about the visit.',
+                'date.regex' => 'Please fill in the data in the format DD.MM.YYYY',
+            ]);
+        }
 }
