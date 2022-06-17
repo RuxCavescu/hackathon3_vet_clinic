@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->string('date')->nullable(false)->change();
-            $table->text('visit_detail')->nullable(false)->change();
+            $table->integer('animal_id');
+            $table->string('date')->nullable(false);
+            $table->text('visit_detail')->nullable(false);
             $table->timestamps();
         });
     }
