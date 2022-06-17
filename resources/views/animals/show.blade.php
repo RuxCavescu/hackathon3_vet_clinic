@@ -7,16 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Welcome to St. Hector's Veterinary Clinic</h1>
-
-
-
-  <a href="{{url("/animals")}}"><button type="button">SHOW ANIMALS</button></a>
-
-  <a href="{{url("/owners")}}"><button type="button">SHOW OWNERS</button></a>
-
-
-
   
 </body>
 </html>
