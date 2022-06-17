@@ -10,6 +10,8 @@
     <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: brown"
     >Vet Clinic Search form</h1>
     
+    <a href="{{ route('animals.create') }}"><button>Create new animal</button></a>
+
  <form action="animals/search">
         <div class="container" style="margin-top: 50px;">
             <div class="row">
@@ -36,7 +38,7 @@
     <ul>
             @foreach($animals as $animal)
       <li style="list-style-type: none;"><a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:brown; font-size: 24px " href="/animals/{{$animal->id}}/detail">{{$animal->name}}</a></li>
-      @endforeach;
+      @endforeach
 
     </ul>
 

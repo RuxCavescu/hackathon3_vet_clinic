@@ -15,6 +15,10 @@
         <li>Age: {{$animal->age}}</li>
         <li>Weight: {{$animal->weight}}</li>
 
+        <a href="{{ url('animals/'.$animal->id.'/detail/view-visits') }}">
+            <button style="margin-top: 20px;">View Visits</button>
+        </a>
+
     </ul>
     
 

@@ -26,14 +26,10 @@
       @foreach ($owner->animals as $animal)
           <li style="display: flex; flex-direction: row; align-items: center;"> 
             <p>* {{ $animal->name }}</p> 
-            <a href="{{ "animals/".$animal->id }}" style="padding-left:50px;">See Details ></a>
+            <a href="{{ "animals/".$animal->id."/detail" }}" style="padding-left:50px;">See Details ></a>
           </li>
       @endforeach
     </ul>
-    
-    
-    
-
   
   </table>
   

@@ -11,7 +11,8 @@ class DetailController extends Controller
     {
 
         $animal = Animal::findOrFail($id);
-
+        
+        // return redirect( url('animals/'.$id.'/detail'));
         return view('detail', [
             'animal' => $animal
         ]);
