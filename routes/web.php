@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/animals', ['App\Http\Controllers\AnimalController', 'show']);
+Route::get('animals/{id}/detail', ['App\Http\Controllers\DetailController', 'detail']);
