@@ -15,7 +15,24 @@
   <p>Email : {{$owner->email}}</p>
   <p>Phone : {{$owner->phone}}</p>
   <p>Address : {{$owner->address}}</p>
-  <p>Pets : {{$owner->animals()->pluck("name")->join(", ")}}</p>
+  {{-- <p>Pets : {{$owner->animals()->pluck("name")->join(", ")}}</p> --}}
+
+  {{-- {{ dump($owner) }};
+  {{ dump($owner->animals) }}; --}}
+
+  <p>Pets:</p>
+
+    <ul>
+      @foreach ($owner->animals as $animal)
+          <li style="display: flex; flex-direction: row; align-items: center;"> 
+            <p>* {{ $animal->name }}</p> 
+            <a href="{{ "animals/".$animal->id }}" style="padding-left:50px;">See Details ></a>
+          </li>
+      @endforeach
+    </ul>
+    
+    
+    
 
   
   </table>
